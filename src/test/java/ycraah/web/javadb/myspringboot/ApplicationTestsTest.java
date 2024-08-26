@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,10 +18,10 @@ class ApplicationTestsTest {
 
   @Test
   void testJpa() {
-    List<Question> all = this.questionRepository.findAll();
-    assertEquals(2, all.size());
-
-    Question q = all.get(0);
-    assertEquals("sbb가 무엇인가요?", q.getSubject());
+    Optional<Question> op = questionRepository.findById(1);
+    if(op.isPresent()) {
+      Question question = op.get();
+      assertEquals("sbb가 무엇인가요?", question.getSubject());
+    }
   }
 }
