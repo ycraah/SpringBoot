@@ -19,14 +19,12 @@ class ApplicationTestsTest {
 
   @Test
   void testJpa() {
-    Optional<Question> oq = questionRepository.findById(2);
+    assertEquals(2, this.questionRepository.count());
+    Optional<Question> oq = this.questionRepository.findById(1);
     assertTrue(oq.isPresent());
     Question q = oq.get();
+    this.questionRepository.delete(q);
+    assertEquals(1, questionRepository.count());
 
-    Answer a = new Answer();
-    a.setContent("네 자동으로 생성됩니다.");
-    a.setQuestion(q);
-    a.setCreateDate(LocalDateTime.now());
-    this.answerRepository.save(a);
   }
 }
