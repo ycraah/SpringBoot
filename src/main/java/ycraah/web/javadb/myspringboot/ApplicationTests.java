@@ -1,18 +1,11 @@
 package ycraah.web.javadb.myspringboot;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
 import java.time.LocalDateTime;
 
-@SpringBootTest
 public class ApplicationTests {
 
-  @Autowired
   private QuestionRepository questionRepository;
 
-  @Test
   void testJpa(){
     Question q1 = new Question();
     q1.setSubject("sbb가 무엇인가요?");
