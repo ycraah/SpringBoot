@@ -18,10 +18,7 @@ class ApplicationTestsTest {
 
   @Test
   void testJpa() {
-    Optional<Question> op = questionRepository.findById(1);
-    if(op.isPresent()) {
-      Question question = op.get();
-      assertEquals("sbb가 무엇인가요?", question.getSubject());
-    }
+    Question q = this.questionRepository.findBySubject("sbb가 무엇인가요?");
+    assertEquals(1, q.getId());
   }
 }
