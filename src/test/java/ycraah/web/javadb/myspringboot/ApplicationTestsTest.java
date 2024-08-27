@@ -19,12 +19,9 @@ class ApplicationTestsTest {
 
   @Test
   void testJpa() {
-    assertEquals(2, this.questionRepository.count());
-    Optional<Question> oq = this.questionRepository.findById(1);
-    assertTrue(oq.isPresent());
-    Question q = oq.get();
-    this.questionRepository.delete(q);
-    assertEquals(1, questionRepository.count());
-
+    Optional<Answer> oa = this.answerRepository.findById(1);
+    assertTrue(oa.isPresent());
+    Answer a = oa.get();
+    assertEquals(2, a.getQuestion().getId());
   }
 }
