@@ -1,4 +1,4 @@
-package ycraah.web.javadb.myspringboot;
+package ycraah.web.javadb.myspringboot.question;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
