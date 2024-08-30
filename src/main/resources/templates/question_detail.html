@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>타이틀</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
-</head>
-<body>
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
     <!--질문-->
     <h2 class="border-bottom py-2" th:text="${question.subject}"></h2>
     <div class="card my-3">
@@ -38,5 +31,5 @@
         <textare name="content" id="content" rows="10" class="form-control"></textare>
         <input type="submit" value="답변 등록" class="btn btn-primary my-2">
     </form>
-</body>
+</div>
 </html>
